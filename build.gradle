@@ -19,7 +19,7 @@ project.version = scmVersion.version
 
 scmVersion {
     repository {
-        customKey = '~/.ssh/id_rsa'
+        customKey = file('../../.ssh/id_rsa')
     }
 }
 
