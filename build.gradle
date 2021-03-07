@@ -7,6 +7,12 @@ plugins {
 group 'org.example'
 project.version = scmVersion.version
 
+scmVersion {
+    repository {
+        customKey = '~/.ssh/id_rsa'
+    }
+}
+
 java {
 //    toolchain {
 //        languageVersion = JavaLanguageVersion.of(11)
