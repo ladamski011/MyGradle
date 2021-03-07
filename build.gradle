@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'pl.allegro.tech.build.axion-release' version '1.12.1'
+}
+
+group 'org.example'
+project.version = scmVersion.version
+
+java {
+//    toolchain {
+//        languageVersion = JavaLanguageVersion.of(11)
+//    }
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'it.unimi.dsi:fastutil:8.5.2'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+
+println "1"
+
+task howdy {
+    // always executed at during initial build script configuration
+    println "2"
+    doLast {
+        // only executed if task itself is invoked
+        println "Howdy"
+    }
+    // always executed at during initial build script configuration
+}
+
+println "3"
+
+task partner {
+    println "4"
+    doLast {
+        println "Partner"
+    }
+}
+println "5"
+
+partner.dependsOn(howdy)
