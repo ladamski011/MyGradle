@@ -50,13 +50,13 @@ test {
 println "1"
 
 task howdy {
-    // always executed at during initial build script configuration
+    // always executed during initial build script configuration
     println "2"
     doLast {
         // only executed if task itself is invoked
         println "Howdy"
     }
-    // always executed at during initial build script configuration
+    // always executed during initial build script configuration
 }
 
 println "3"
